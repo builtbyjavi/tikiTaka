@@ -1,27 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./DropdownSection.css";
 import DropdownItem from "./DropdownItem";
-import axios from "axios";
-
-const client = axios.create({
-  baseURL: "http://localhost:5000",
-});
+import useGetAllProducts from "../../api/useGetAllProducts";
 
 const DropdownSection = (props) => {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    client
-      .get("/products")
-      .then((response) => {
-        setProducts(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-    return;
-  }, []);
-
+  const { products } = useGetAllProducts();
   const productList = () => {
     const items = products.filter(
       (product) => product.menuSection === props.header

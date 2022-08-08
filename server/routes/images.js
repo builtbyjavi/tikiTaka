@@ -4,8 +4,6 @@ const router = express.Router();
 
 const db = require("../db/connection");
 
-const ObjectId = require("mongodb").ObjectId;
-
 // GET ALL IMAGES
 router.route("/images").get((req, res) => {
   let db_connect = db.getDb();
@@ -17,3 +15,5 @@ router.route("/images").get((req, res) => {
       res.json(result);
     });
 });
+
+module.exports = router;

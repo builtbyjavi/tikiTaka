@@ -8,7 +8,7 @@ import DropdownSection from "../menu/DropdownSection";
 const Navbar = () => {
   return (
     <React.Fragment>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
         <div className="container-fluid px-4">
           <NavLink className="navbar-brand d-flex align-items-center" to="/">
             <GiAnubis />
@@ -62,6 +62,11 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
+      <footer className="text-center">
+        <p className="m-0 py-1 fw-light">
+          Free Shipping on Orders $100 and More
+        </p>
+      </footer>
     </React.Fragment>
   );
 };

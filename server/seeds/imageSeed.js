@@ -25,13 +25,13 @@ const seedDB = async () => {
 
   const assets = await cloudinary.search
     .expression("folder:tikiTaka/images/*")
-    .max_results(1)
+    .max_results(15)
     .execute();
 
   for (let i = 0; i < imageData.length; i++) {
-    const match = imageData[i].name.replace(" ", "").toLowerCase();
-    const myImg = assets.resources.filter((img) =>
-      img.filename.replace("_", "").toLowerCase().includes(match)
+    const match = imageData[i].name.replace(/\s/g, "").toLowerCase();
+    const myImg = await assets.resources.filter((img) =>
+      img.filename.replace(/_/g, "").toLowerCase().includes(match)
     );
     const image = new Image({
       ...imageData[i],

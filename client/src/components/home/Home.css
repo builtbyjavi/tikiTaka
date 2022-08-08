@@ -1,0 +1,17 @@
+.header-img-wrapper {
+  position: relative;
+  width: 100vw;
+}
+
+.header-overlay-wrapper {
+  position: absolute;
+  bottom: 0;
+}
+
+.video-wrapper {
+  width: 100vw;
+}
+
+.video{
+  width: 100vw;
+}
