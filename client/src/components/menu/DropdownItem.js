@@ -11,13 +11,14 @@ const DropdownItem = (props) => {
     classes += " no-display";
   }
   return (
-    <div className="card d-flex flex-row align-items-center">
-      <img className={classes} src={thumbnail} alt={props.name} />
+    <div className="card d-flex flex-row align-items-center border-0 bg-light">
       <Link
         to={`/products/${props.id}`}
-        className="text-decoration-none text-black"
+        className="text-decoration-none text-black hover"
       >
-        {props.name}
+        <img className={classes} src={thumbnail} alt={props.name} />
+        <p className="d-inline px-1">{props.name}</p>
+        
       </Link>
     </div>
   );

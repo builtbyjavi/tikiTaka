@@ -42,7 +42,10 @@ const Navbar = () => {
                 >
                   products
                 </NavLink>
-                <ul className="dropdown-menu " aria-labelledby="navbarDropdown">
+                <ul
+                  className="dropdown-menu bg-light"
+                  aria-labelledby="navbarDropdown"
+                >
                   <DropdownSection header="shoes" />
                   <DropdownSection header="clothing" />
                   <DropdownSection header="accessories" />

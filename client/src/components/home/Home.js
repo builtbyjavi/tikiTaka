@@ -13,20 +13,13 @@ const Home = () => {
 
   let video = "";
   let banner = "";
-  let topImg = "";
-  let bottomImg = "";
+
   if (!loading) {
     video = images.filter((images) =>
       images.filename.replace(/_/g, "").toLowerCase().includes("video")
     )[0].url;
     banner = images.filter((images) =>
       images.filename.replace(/_/g, "").toLowerCase().includes("banner")
-    )[0].url;
-    topImg = images.filter((images) =>
-      images.filename.replace(/_/g, "").toLowerCase().includes("homeslide1")
-    )[0].url;
-    bottomImg = images.filter((images) =>
-      images.filename.replace(/_/g, "").toLowerCase().includes("homeslide2")
     )[0].url;
   }
 
@@ -35,7 +28,7 @@ const Home = () => {
       {loading && <div>Loading</div>}
       {!loading && (
         <div>
-          <div className="header-img-wrapper vw-100">
+          <div className="header-img-wrapper mw-100">
             <img src={images[0].url} alt="" className="img-fluid w-100" />
             <div className="header-overlay-wrapper text-light bg-light bg-opacity-25 p-3 ">
               <h1>Become a Technician</h1>
@@ -47,24 +40,24 @@ const Home = () => {
           </div>
 
           <ShoeCarousel />
-          <ShoeSlide topImg={topImg} bottomImg={bottomImg} />
-          <div className="video-wrapper">
+          <ShoeSlide images={images} />
+          <div className="video-wrapper mw-100">
             <video
               src={video}
               autoPlay
               muted
               loop
-              className="video"
+              className="w-100"
               alt="nike soccer commercial"
             />
           </div>
-          <div className="banner-wrapper p-3">
-            <img className="banner-img w-100" src={banner} />
-            <div className="banner-footer row align-items-center py-3 px-5 bg-light">
-              <div className="col-4 border-end border-dark">
+          <div className=" p-3">
+            <img className=" w-100" src={banner} />
+            <div className="d-flex align-items-center justify-content-between py-3 px-5 bg-light">
+              <div className="border-end border-dark">
                 <h3>Helping You Achieve High Performance</h3>
               </div>
-              <div className="col-8 ">
+              <div className="ps-5">
                 <h5 className="fw-light m-0">
                   All the gear you need from trusted, result-proven brands.
                   Check out all of the new releases exclusively at TikiTaka
@@ -81,8 +74,8 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <FeaturedItems />
-          <Reviews />
+          <FeaturedItems images={images} />
+          <Reviews images={images} />
         </div>
       )}
     </React.Fragment>

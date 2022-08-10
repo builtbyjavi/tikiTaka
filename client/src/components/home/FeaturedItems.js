@@ -1,25 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Reviews.css";
+import FeaturedItem from './FeaturedItem';
 
 const FeaturedItems = (props) => {
+  const imageList = props.images.filter((images) =>
+      images.filename.replace(/_/g, "").toLowerCase().includes("bullet")
+    );
+    
   return (
     <React.Fragment>
-      <div className="reviews-wrapper d-flex flex-column justify-content-center align-items-center">
-        <div>
-          <h1>innovative design that rules the pitch</h1>
+      <div className="row mw-100 m-0 p-2">
+        <div className="col-3">
+        <FeaturedItem img={imageList[0].url} txt='who we are'/>
         </div>
-        <div>
-          <Link to="/">link</Link>
-          <Link to="/">link</Link>
-          <Link to="/">link</Link>
-        </div>
-        <div>
-          <img />
-          <img />
-          <img />
-          <img />
-        </div>
+          <div className="col-3"><FeaturedItem img={imageList[1].url} txt='sustainability'/></div>
+          <div className="col-3"><FeaturedItem img={imageList[2].url} txt='gifting'/></div>
+          <div className="col-3"><FeaturedItem img={imageList[3].url} txt='our stories'/></div>
+          
+          
+          
       </div>
     </React.Fragment>
   );

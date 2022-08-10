@@ -12,7 +12,10 @@ const DropdownSection = (props) => {
 
     return items.map((item) => {
       return (
-        <li className="list-group-item" key={item._id}>
+        <li
+          className="list-group-item border-0 py-1 bg-light hover"
+          key={item._id}
+        >
           <DropdownItem name={item.name} img={item.thumbnail} id={item._id} />
         </li>
       );
@@ -20,8 +23,8 @@ const DropdownSection = (props) => {
   };
 
   return (
-    <div className="card">
-      <h4 className="dropdown-header">{props.header}</h4>
+    <div className="card border-0 bg-light">
+      <h4 className="dropdown-header py-3">{props.header}</h4>
       <ul className="list-group">{productList()}</ul>
     </div>
   );
