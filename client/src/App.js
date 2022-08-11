@@ -4,6 +4,7 @@ import ProductShow from "./components/home/ProductShow";
 import Home from "./components/home/Home";
 import Navbar from "./components/UI/Navbar";
 import Footer from "./components/UI/Footer";
+import About from "./components/about/About";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <Routes>
         <Route exact path="/products/:id" element={<ProductShow />} />
         <Route exact path="/" element={<Home />} />
+        <Route exact path="/about" element={<About />} />
       </Routes>
       <Footer />
     </React.Fragment>

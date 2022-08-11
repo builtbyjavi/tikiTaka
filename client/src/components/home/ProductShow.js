@@ -16,7 +16,7 @@ const ProductShow = () => {
       {!loading && (
         <div className="card d-flex flex-row">
           <img
-            src={product.images[0].url}
+            src={product.thumbnail[0].url}
             alt={product.name}
             className="img-fluid w-50"
           />

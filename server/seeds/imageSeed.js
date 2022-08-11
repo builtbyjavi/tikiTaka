@@ -25,7 +25,7 @@ const seedDB = async () => {
 
   const assets = await cloudinary.search
     .expression("folder:tikiTaka/images/*")
-    .max_results(15)
+    .max_results(20)
     .execute();
 
   for (let i = 0; i < imageData.length; i++) {

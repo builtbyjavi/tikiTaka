@@ -6,9 +6,11 @@ import useGetAllProducts from "../../api/useGetAllProducts";
 const DropdownSection = (props) => {
   const { products } = useGetAllProducts();
   const productList = () => {
-    const items = products.filter(
+    let items = products.filter(
       (product) => product.menuSection === props.header
     );
+
+    items = items.slice(0, 5);
 
     return items.map((item) => {
       return (

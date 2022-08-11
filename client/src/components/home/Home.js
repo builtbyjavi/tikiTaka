@@ -15,9 +15,6 @@ const Home = () => {
   let banner = "";
 
   if (!loading) {
-    video = images.filter((images) =>
-      images.filename.replace(/_/g, "").toLowerCase().includes("video")
-    )[0].url;
     banner = images.filter((images) =>
       images.filename.replace(/_/g, "").toLowerCase().includes("banner")
     )[0].url;
@@ -41,16 +38,6 @@ const Home = () => {
 
           <ShoeCarousel />
           <ShoeSlide images={images} />
-          <div className="video-wrapper mw-100">
-            <video
-              src={video}
-              autoPlay
-              muted
-              loop
-              className="w-100"
-              alt="nike soccer commercial"
-            />
-          </div>
           <div className=" p-3">
             <img className=" w-100" src={banner} />
             <div className="d-flex align-items-center justify-content-between py-3 px-5 bg-light">

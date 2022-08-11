@@ -38,4 +38,13 @@ module.exports = [
   {
     name: "home slide 2",
   },
+  {
+    name: "about banner",
+  },
+  {
+    name: "about headquarters",
+  },
+  {
+    name: "about header",
+  },
 ];

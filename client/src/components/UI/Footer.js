@@ -8,7 +8,7 @@ const Footer = () => {
     <React.Fragment>
       <footer className="container-fluid bg-dark  py-5">
         <div className="row justify-content-between text-light py-2">
-          <div className="col border-end justify">
+          <div className="col-6 border-end justify pe-1">
             <GiAnubis className="icon" />
             <h6>get 15% off*</h6>
             <p>when your order total is $100 or more.</p>
@@ -26,7 +26,7 @@ const Footer = () => {
               receive an email
             </p>
           </div>
-          <div className="col">
+          <div className="col-3">
             <h5>Help</h5>
             <ul className="list-group">
               <li className="list-item">
@@ -79,7 +79,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="col">
+          <div className="col-3">
             <h5>About Us</h5>
             <ul className="list-group">
               <li className="list-item">
