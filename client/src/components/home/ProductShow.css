@@ -1,9 +1,4 @@
-
-.emblem {
-    font-size: 3rem;
-}
-
-.review-images {
+.show-wrapper {
     max-width: 1500px;
     margin: 0 auto !important;
 }

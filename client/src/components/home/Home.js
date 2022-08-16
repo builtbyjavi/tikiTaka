@@ -30,7 +30,10 @@ const Home = () => {
             <div className="header-overlay-wrapper text-light bg-light bg-opacity-25 p-3 ">
               <h1>Become a Technician</h1>
               <h2>New Adidas Data Pack</h2>
-              <Link to="/" className="text-decoration-none text-light">
+              <Link
+                to="products/62e434722f224c8fea168396"
+                className="text-decoration-none text-light"
+              >
                 <h5 className="fw-light">Shop Now</h5>
               </Link>
             </div>

@@ -25,17 +25,17 @@ const Reviews = (props) => {
           <p>4.4 out of 5 based on 34,947 reviews</p>
         </div>
         <div className="images position-relative">
-          <div className="row">
-            <div className="col-3 px-1">
+          <div className="row gx-2 review-images">
+            <div className="col">
               <img src={imageList[0].url} alt="" className="img-fluid" />
             </div>
-            <div className="col-3  px-1">
+            <div className="col">
               <img src={imageList[1].url} alt="" className="img-fluid" />
             </div>
-            <div className="col-3  px-1">
+            <div className="col">
               <img src={imageList[2].url} alt="" className="img-fluid" />
             </div>
-            <div className="col-3  px-1">
+            <div className="col">
               <img src={imageList[3].url} alt="" className="img-fluid" />
             </div>
           </div>

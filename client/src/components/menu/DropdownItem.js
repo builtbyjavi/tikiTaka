@@ -18,7 +18,6 @@ const DropdownItem = (props) => {
       >
         <img className={classes} src={thumbnail} alt={props.name} />
         <p className="d-inline px-1">{props.name}</p>
-        
       </Link>
     </div>
   );

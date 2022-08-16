@@ -11,8 +11,8 @@ const App = () => {
     <React.Fragment>
       <Navbar />
       <Routes>
-        <Route exact path="/products/:id" element={<ProductShow />} />
         <Route exact path="/" element={<Home />} />
+        <Route exact path="/products/:id" element={<ProductShow />} />
         <Route exact path="/about" element={<About />} />
       </Routes>
       <Footer />
