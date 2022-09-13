@@ -41,7 +41,7 @@ const Home = () => {
 
           <ShoeCarousel />
           <ShoeSlide images={images} />
-          <div className=" p-3">
+          <div className="p-3">
             <img className=" w-100" src={banner} />
             <div className="d-flex align-items-center justify-content-between py-3 px-5 bg-light">
               <div className="border-end border-dark">
@@ -50,14 +50,14 @@ const Home = () => {
               <div className="ps-5">
                 <h5 className="fw-light m-0">
                   All the gear you need from trusted, result-proven brands.
-                  Check out all of the new releases exclusively at TikiTaka
+                  Check out all of the new releases exclusively at TikiTaka.
                   <span>
                     &nbsp;
                     <Link
                       to="/"
                       className="text-decoration-none text-secondary"
                     >
-                      Shop Now
+                      shop now
                     </Link>
                   </span>
                 </h5>

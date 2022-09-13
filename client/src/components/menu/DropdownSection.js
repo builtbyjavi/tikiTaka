@@ -1,18 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./DropdownSection.css";
 import DropdownItem from "./DropdownItem";
+// import useHttpReq from "../../api/useHttpReq";
 import useGetAllProducts from "../../api/useGetAllProducts";
 
 const DropdownSection = (props) => {
-  const { products } = useGetAllProducts();
+  // const [products, setProducts] = useState([]);
+  const { products, isLoading } = useGetAllProducts();
+
+  // useEffect(() => {
+  // console.log(products);
+  // let items = products.filter((item) => item.menuSection === props.header);
+  // items = items.slice(0, 5);
+  // setProducts(items);
+  // }, []);
+
   const productList = () => {
-    let items = products.filter(
-      (product) => product.menuSection === props.header
-    );
-
-    items = items.slice(0, 5);
-
-    return items.map((item) => {
+    products.map((item) => {
       return (
         <li
           className="list-group-item border-0 py-1 bg-light hover"

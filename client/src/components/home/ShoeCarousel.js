@@ -21,24 +21,24 @@ const ShoeCarousel = (props) => {
       {!loading && (
         <div className="container-fluid">
           <div className="row text-center py-5">
-            <h2>innovative design that rules the pitch</h2>
+            <h2>innovative design that rules the pitch.</h2>
           </div>
-          <div className="row text-center border-bottom border-2">
+          <div className="row text-center">
             <div className="col">
               <NavLink to="/" className="text-decoration-none text-black">
-                <h4 className="fw-light">Best Sellers</h4>
+                {/* <h4 className="fw-light">Best Sellers</h4> */}
               </NavLink>
             </div>
 
             <div className="col">
               <NavLink to="/" className="text-decoration-none text-black">
-                <h4 className="fw-light">New Releases</h4>
+                {/* <h4 className="fw-light">New Releases</h4> */}
               </NavLink>
             </div>
 
             <div className="col">
               <NavLink to="/" className="text-decoration-none text-black">
-                <h4 className="fw-light">On Sale</h4>
+                {/* <h4 className="fw-light">On Sale</h4> */}
               </NavLink>
             </div>
           </div>
