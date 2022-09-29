@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 const client = axios.create({
   baseURL: "http://localhost:5000",
@@ -9,24 +9,24 @@ const useGetAllProducts = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      await client
-        .get("/products")
-        .then((response) => {
-          setProducts(response.data);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-      setLoading(false);
-    };
+  const fetchData = useCallback(async () => {
+    await client
+      .get("/products")
+      .then((response) => {
+        localStorage.setItem("products", JSON.stringify(response.data));
+        setProducts(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    setLoading(false);
+  }, []);
 
+  useEffect(() => {
     fetchData();
   }, []);
 
   return {
-    products,
     loading,
   };
 };

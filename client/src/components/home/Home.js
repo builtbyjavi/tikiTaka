@@ -31,7 +31,7 @@ const Home = () => {
               <h1>Become a Technician</h1>
               <h2>New Adidas Data Pack</h2>
               <Link
-                to="products/62e434722f224c8fea168396"
+                to="/products/62e434722f224c8fea168396"
                 className="text-decoration-none text-light"
               >
                 <h5 className="fw-light">Shop Now</h5>
@@ -39,7 +39,7 @@ const Home = () => {
             </div>
           </div>
 
-          <ShoeCarousel />
+          {/* <ShoeCarousel /> */}
           <ShoeSlide images={images} />
           <div className="p-3">
             <img className=" w-100" src={banner} />

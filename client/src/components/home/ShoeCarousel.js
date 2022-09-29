@@ -44,17 +44,26 @@ const ShoeCarousel = (props) => {
           </div>
           <div className="row gx-2">
             <div className="col-4 carousel-img ">
-              <Link to="/" className="text-decoration-none text-black">
+              <Link
+                to={`/products/${bestSellers._id}`}
+                className="text-decoration-none text-black"
+              >
                 <ProductPreview item={bestSellers} />
               </Link>
             </div>
             <div className="col-4 carousel-img">
-              <Link to="/" className="text-decoration-none text-black">
+              <Link
+                to={`/products/${newReleases._id}`}
+                className="text-decoration-none text-black"
+              >
                 <ProductPreview item={newReleases} />
               </Link>
             </div>
             <div className="col-4 carousel-img">
-              <Link to="/" className="text-decoration-none text-black">
+              <Link
+                to={`/products/${onSale._id}`}
+                className="text-decoration-none text-black"
+              >
                 <ProductPreview item={onSale} />
               </Link>
             </div>

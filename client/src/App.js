@@ -1,20 +1,26 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
-import ProductShow from "./components/home/ProductShow";
+
 import Home from "./components/home/Home";
 import Navbar from "./components/UI/Navbar";
 import Footer from "./components/UI/Footer";
-import About from "./components/about/About";
+
+const ProductShow = React.lazy(() => import("./components/home/ProductShow"));
+const About = React.lazy(() => import("./components/about/About"));
+const NotFound = React.lazy(() => import("./components/notFound/NotFound"));
 
 const App = () => {
   return (
     <React.Fragment>
       <Navbar />
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/products/:id" element={<ProductShow />} />
-        <Route exact path="/about" element={<About />} />
-      </Routes>
+      <Suspense>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/products/:id" element={<ProductShow />} />
+          <Route exact path="/about" element={<About />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
       <Footer />
     </React.Fragment>
   );

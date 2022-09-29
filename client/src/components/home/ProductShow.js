@@ -1,17 +1,22 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import useGetProduct from "../../api/useGetProduct";
 import "./ProductShow.css";
 import ImageGrid from "./ImageGrid";
 
 const ProductShow = () => {
-  const { product, loading } = useGetProduct();
+  const { loading } = useGetProduct();
+  const { id } = useParams();
+  const locallyStoredProducts = JSON.parse(localStorage.getItem("products"));
+  const product = locallyStoredProducts.filter((item) => item._id === id);
+  console.log(product);
   const isShoe = product.menuSection === "shoes";
 
   return (
     <React.Fragment>
       {loading && <div>Loading</div>}
       {!loading && (
-        <div className="show-wrapper px-4">
+        <div className="show-wrapper px-4 py-4">
           <div className="row">
             <div className="col-8">
               <img
@@ -26,7 +31,24 @@ const ProductShow = () => {
                 <h3 className="fw-light">${product.price}</h3>
                 <span class="badge bg-dark">New</span>
               </div>
-              {isShoe && <p>size</p>}
+              {isShoe && (
+                <div>
+                  <h5 className="fw-light py-4 d-inline-block ">size: </h5>
+
+                  <select
+                    className="form-select d-inline-block w-25 ms-3"
+                    aria-label="select"
+                  >
+                    <option defaultValue>size</option>
+                    <option value="1">7</option>
+                    <option value="2">8</option>
+                    <option value="3">9</option>
+                    <option value="4">10</option>
+                    <option value="5">11</option>
+                    <option value="5">12</option>
+                  </select>
+                </div>
+              )}
               {!isShoe && (
                 <div className="py-4">
                   <h4>Size</h4>
@@ -65,7 +87,6 @@ const ProductShow = () => {
                   </div>
                 </div>
               )}
-
               <div className="form d-flex flex-row">
                 <div className="col-4">
                   <select className="form-select" aria-label="Qty">
@@ -73,8 +94,8 @@ const ProductShow = () => {
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
-                    <option value="1">4</option>
-                    <option value="2">5</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
                   </select>
                 </div>
                 <div className="col-8 px-2">
@@ -84,16 +105,16 @@ const ProductShow = () => {
                   </button>
                 </div>
               </div>
-
               <div className="pt-5">
                 <p className="mb-1 fw-bold">Description</p>
                 <p className="fw-light">{product.description}</p>
               </div>
             </div>
           </div>
-          {/* <ImageGrid images={product.images} /> */}
         </div>
       )}
+
+      {/* <ImageGrid images={product.images} /> */}
     </React.Fragment>
   );
 };
