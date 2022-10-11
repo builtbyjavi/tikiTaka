@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useEffect, useCallback } from "react";
 
 const client = axios.create({
-  baseURL: "https://ecommerce-tikitaka.herokuapp.com/",
+  baseURL: "https://ecommerce-tikitaka.herokuapp.com",
 });
 
 const useGetAllImages = () => {
