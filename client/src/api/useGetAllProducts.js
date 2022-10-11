@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useEffect, useCallback } from "react";
 
 const client = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "https://ecommerce-tikitaka.herokuapp.com/",
 });
 
 const useGetAllProducts = () => {
