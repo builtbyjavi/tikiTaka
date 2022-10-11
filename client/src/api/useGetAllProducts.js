@@ -6,7 +6,6 @@ const client = axios.create({
 });
 
 const useGetAllProducts = () => {
-  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const fetchData = useCallback(async () => {
@@ -14,7 +13,6 @@ const useGetAllProducts = () => {
       .get("/products")
       .then((response) => {
         localStorage.setItem("products", JSON.stringify(response.data));
-        setProducts(response.data);
       })
       .catch((error) => {
         console.log(error);
@@ -24,7 +22,7 @@ const useGetAllProducts = () => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   return {
     loading,

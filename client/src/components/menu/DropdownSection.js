@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./DropdownSection.css";
 import DropdownItem from "./DropdownItem";
-import useGetAllProducts from "../../api/useGetAllProducts";
 
 const DropdownSection = (props) => {
-  const { isLoading } = useGetAllProducts();
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -16,7 +14,6 @@ const DropdownSection = (props) => {
         .filter((item) => item.menuSection === props.header)
         .slice(0, 5);
 
-      console.log(filteredProducts);
       setProducts(
         filteredProducts.map((item) => {
           return (
@@ -28,6 +25,7 @@ const DropdownSection = (props) => {
                 name={item.name}
                 img={item.thumbnail}
                 id={item._id}
+                collapseDropdown={props.collapseDropdown}
               />
             </li>
           );
@@ -36,16 +34,14 @@ const DropdownSection = (props) => {
     };
 
     productList();
-  }, []);
+  }, [props.collapseDropdown, props.header]);
 
   return (
     <div className="card border-0 bg-light">
-      {!isLoading && (
-        <div>
-          <h4 className="dropdown-header py-3">{props.header}</h4>
-          <ul className="list-group">{products}</ul>
-        </div>
-      )}
+      <div>
+        <h4 className="dropdown-header py-3">{props.header}</h4>
+        <ul className="list-group">{products}</ul>
+      </div>
     </div>
   );
 };

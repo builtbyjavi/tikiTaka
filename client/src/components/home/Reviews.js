@@ -1,6 +1,6 @@
 import React from "react";
 import ReviewSlide from "./ReviewSlide";
-import { BsStarFill, BsStarHalf, BsStar } from "react-icons/bs";
+import { BsStarFill, BsStarHalf } from "react-icons/bs";
 import { GiAnubis } from "react-icons/gi";
 import "./Reviews.css";
 

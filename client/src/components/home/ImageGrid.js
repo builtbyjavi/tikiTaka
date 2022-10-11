@@ -1,19 +1,23 @@
 import React from "react";
 
 const ImageGrid = (props) => {
-    const images = props.images.map(image => image.url)
-    while (images) {
-        
-        for (let col = 0; col = 2; col++) {
+  const images = props.images;
 
-        }
-    }
-    
-    return <React.Fragment>
-        <div className="images">
-            {images}
+  return (
+    <React.Fragment>
+      <div className="container py-4">
+        <div className="row g-2">
+          {images.map((img) => {
+            return (
+              <div className="col-4" key={images._id}>
+                <img src={img.url} alt="" className="img-fluid" />
+              </div>
+            );
+          })}
         </div>
-    </React.Fragment>;
+      </div>
+    </React.Fragment>
+  );
 };
 
 export default ImageGrid;

@@ -15,8 +15,8 @@ const ShoeSlide = (props) => {
         <h4 className="fw-light">bring your ideas to life.</h4>
       </div>
       <div className="mw-100 p-5 slide-wrapper">
-        <img src={bottomImg} className="bottom-image" />
-        <img src={topImg} className="top-image" />
+        <img src={bottomImg} className="bottom-image" alt="soccer shoe" />
+        <img src={topImg} className="top-image" alt="soccer shoe" />
       </div>
     </React.Fragment>
   );

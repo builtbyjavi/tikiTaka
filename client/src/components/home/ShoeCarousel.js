@@ -1,24 +1,23 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import ProductPreview from "./ProductPreview";
-import useGetAllProducts from "../../api/useGetAllProducts";
 import "./ShoeCarousel.css";
 
 const ShoeCarousel = (props) => {
-  const { products, loading } = useGetAllProducts();
+  const locallyStoredProducts = JSON.parse(localStorage.getItem("products"));
   let bestSellers = "";
   let newReleases = "";
   let onSale = "";
-  if (!loading) {
-    bestSellers = products[0];
-    newReleases = products[1];
-    onSale = products[2];
+  if (!props.isLoading) {
+    bestSellers = locallyStoredProducts[0];
+    newReleases = locallyStoredProducts[1];
+    onSale = locallyStoredProducts[2];
   }
 
   return (
     <React.Fragment>
-      {loading && <div>Loading</div>}
-      {!loading && (
+      {props.isLoading && <div>Loading</div>}
+      {!props.isLoading && (
         <div className="container-fluid">
           <div className="row text-center py-5">
             <h2>innovative design that rules the pitch.</h2>

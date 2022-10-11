@@ -7,3 +7,12 @@
   position: absolute;
   bottom: 0;
 }
+
+.spinner-div {
+  height: 75vh;
+  width: 100vw;
+  background-color: rgba(221, 222, 227, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}

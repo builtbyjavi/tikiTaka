@@ -1,32 +1,30 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 const client = axios.create({
   baseURL: "http://localhost:5000",
 });
 
 const useGetAllImages = () => {
-  const [images, setImages] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      await client
-        .get("/images")
-        .then((response) => {
-          setImages(response.data);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-      setLoading(false);
-    };
-
-    fetchData();
+  const fetchData = useCallback(async () => {
+    await client
+      .get("/images")
+      .then((response) => {
+        localStorage.setItem("images", JSON.stringify(response.data));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    setLoading(false);
   }, []);
 
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
+
   return {
-    images,
     loading,
   };
 };
