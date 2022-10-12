@@ -13,14 +13,15 @@ const Home = () => {
   const { isImageLoading } = useGetAllImages();
   const { isProductLoading } = useGetAllProducts();
   const locallyStoredImages = JSON.parse(localStorage.getItem("images"));
-
   let banner;
 
-  if (!isImageLoading) {
-    banner = locallyStoredImages.filter((images) =>
-      images.filename.replace(/_/g, "").toLowerCase().includes("banner")
-    )[0].url;
-  }
+  useEffect(() => {
+    if (!isImageLoading) {
+      banner = locallyStoredImages.filter((images) =>
+        images.filename.replace(/_/g, "").toLowerCase().includes("banner")
+      )[0].url;
+    }
+  }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);
