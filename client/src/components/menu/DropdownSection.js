@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./DropdownSection.css";
 import DropdownItem from "./DropdownItem";
 
 const DropdownSection = (props) => {

@@ -1,5 +1,4 @@
 import React from "react";
-import "./ProductPreview.css";
 
 const ProductPreview = (props) => {
   const item = props.item;

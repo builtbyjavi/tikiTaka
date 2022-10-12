@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
 import ShoeCarousel from "./ShoeCarousel";
@@ -13,15 +13,11 @@ const Home = () => {
   const { isImageLoading } = useGetAllImages();
   const { isProductLoading } = useGetAllProducts();
   const locallyStoredImages = JSON.parse(localStorage.getItem("images"));
-  let banner;
-
-  useEffect(() => {
-    if (!isImageLoading) {
-      banner = locallyStoredImages.filter((images) =>
-        images.filename.replace(/_/g, "").toLowerCase().includes("banner")
-      )[0].url;
-    }
-  }, []);
+  const bannerRef = useRef(
+    locallyStoredImages.filter((images) =>
+      images.filename.replace(/_/g, "").toLowerCase().includes("banner")
+    )[0].url
+  );
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -54,7 +50,11 @@ const Home = () => {
           <ShoeCarousel isLoading={isProductLoading} />
           <ShoeSlide images={locallyStoredImages} />
           <div className="p-3">
-            <img className=" w-100" src={banner} alt="soccer ball and cleats" />
+            <img
+              className=" w-100"
+              src={bannerRef}
+              alt="soccer ball and cleats"
+            />
             <div className="d-flex align-items-center justify-content-between py-3 px-5 bg-light">
               <div className="border-end border-dark">
                 <h3>Helping You Achieve High Performance</h3>
