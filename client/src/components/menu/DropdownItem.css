@@ -1,9 +1,0 @@
-.no-display {
-    display: none;
-}
-
-.hover:hover {
-    color: gray !important;
-    font-weight: 450;
-    transform: scale(1.02);
-}
