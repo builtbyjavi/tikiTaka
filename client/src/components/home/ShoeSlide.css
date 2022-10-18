@@ -1,0 +1,15 @@
+
+.slide-wrapper {
+    display: grid;
+}
+
+.top-image, .bottom-image {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.top-image, .bottom-image {
+    grid-area: 1/-1;
+    margin: auto;
+}
+

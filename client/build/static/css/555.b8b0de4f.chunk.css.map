@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/555.b8b0de4f.chunk.css","mappings":"AAAA,cAEE,uBAAyB,CADzB,gBAEF,CAEA,UACE,yBACF","sources":["components/home/ProductShow.css"],"sourcesContent":[".show-wrapper {\n  max-width: 1500px;\n  margin: 0 auto !important;\n}\n\n.main-img {\n  max-height: 80vh !important;\n}\n"],"names":[],"sourceRoot":""}

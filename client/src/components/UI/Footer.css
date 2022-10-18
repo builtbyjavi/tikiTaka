@@ -1,0 +1,12 @@
+.icon {
+  font-size: 2rem;
+}
+
+li {
+  list-style: none;
+}
+
+.footer-row {
+  max-width: 1250px;
+  margin: 0 auto !important;
+}
